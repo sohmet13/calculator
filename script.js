@@ -1,22 +1,20 @@
 $(document).ready(function() { 
-  var result=0;
+  var result = 0;
   $('.button').on('mousedown', function(){
-    var button = $(this).text();
-    var head = $('h1');
-    var str = $('p');
+    const button = $(this).text();
+    const head = $('#main');
+    const str = $('#expression');
     //проверяем, что нажатая копка с цифрой
      if (button.match(/[0-9]/)){
-       //проверяем что в заголовке не 0, не математические знаки и это не законченное выражение
-       if (head.text()==='0' || head.text().match(/[/*+]|-/) || str.text().match(/=/g)){
+       //проверяем что в заголовке не 0 и в строке выражения, не математические знаки и это не законченное выражение
+       if ((head.text()==='0' && (str.text()==='0' || str.text()==='Digit Limit Met')) || head.text().match(/[/*+]|-/) || str.text().match(/=/g)){
         head.text(button);
        } else {
          head.text(head.text()+button);
        }
-       //проверяем что в подстрочке не ноль, не превышение длины строки и не законченное выражение
+       //проверяем что в строке выражения не ноль, не превышение длины строки и не законченное выражение
        if (str.text()==='Digit Limit Met' || str.text()==='0' || str.text().match(/[=]/g)){
           str.text(button);
-       } else if (!str.text().match(/[/*+=]|-/)) {
-         str.text(head.text());
        } else {
          str.text(str.text()+button);
        }
@@ -26,36 +24,34 @@ $(document).ready(function() {
       head.text(head.text()+button);
       str.text(str.text()+button);
       //одноточие
-      if (head.text().match(/[.]/g).length>1 || str.text().match(/=/g) || str.text()[str.text().length-2].match(/[/*+]|-/)) {
+      if (head.text().match(/[.]/g).length>1) {
         str.text(str.text().slice(0, -1));
         head.text(head.text().slice(0, -1));
+      } else if (head.text().match(/[/*+]|-/g)) {
+        head.text(0+button);
+        str.text(str.text().slice(0, -1)+0+button);
       }
-      if (!str.text().match(/[/*+=]|-/g)) {
-         str.text(head.text());
-       }
       if (str.text().match(/[=]/g)) {
         str.text(0+button);
         head.text(0+button);
-      }
+      } 
     }
     //выполняем математические операции
     if(button.match(/[/*+]|-/)) {
-      if (head.text()!=0 && str.text()!=0){
         head.text(button);
       //проверяем что в подстрочке все в порядке
-      if (str.text()==='Digit Limit Met' || str.text()==='0') {
-          str.text(button);
+      if (str.text()==='Digit Limit Met') {
+         str.text(button);
+        //что в ней нет знака равно
        } else if (str.text().match(/[=]/g)) {
          str.text(result+button);
+         //заменям существующий оператор на нажатый
+       } else if (str.text()[str.text().length-1].match(/[/*+]|-/)) {
+         str.text(str.text().slice(0, -1)+button);
+         //если обошли все трудные случаи - просто вставлем текст
        } else {
          str.text(str.text()+button);
        }
-      //предотвращаем лишние математические операции
-      if (str.text()[str.text().length-2].match(/[/*+]|-/)) {
-        str.text(str.text().slice(0, -1));
-        head.text(str.text()[str.text().length-1]);
-      }
-     }
     }
     //что делать после равно
     if (button==='=') {
@@ -79,17 +75,28 @@ $(document).ready(function() {
     if (button==='CE') {
       if (str.text().match(/[=]/g)) {
         str.text(0);
+        head.text(0);
       } 
-      if (head.text().match(/[/*+]|-/)) {
-        str.text(str.text().slice(0, -1));
-      } 
-      if (head.text().match(/[0-9]/)) {
-        str.text(str.text().slice(0, -head.text().length));
-        if (!str.text().match(/[0-9./*+]|-/) || str.text().length===1 || str.text()===head.text()) {
-          str.text(0);
+      let piece = str.text().slice(0, -head.text().length);
+      piece ? str.text(piece): str.text(0);
+      var change = str.text();
+      //меняем параметры поиска в зависимости от того, чем заканчивается выражение
+      if (str.text()[str.text().length-1].match(/[/*+]|-/)) {
+          text(/[0-9.]/)
+        } else {
+          text(/[/*+]|-/);
         }
-      }
-      head.text(0);
+      //ищем либо последний оператор либо последнее число в строке выражения для его отображения в главном поле ввода чисел/операторов
+      function text(re) {
+        let string = change;
+        if (string.match(re)){
+          let num = string.search(re);
+          change = string.slice(num+1); 
+          text(re);
+        } else {
+          head.text(string);
+        }
+      }  
     }
     //очищаем строчки за превышение длины строки
     if (head.text().length>9 || str.text().length>25) {
