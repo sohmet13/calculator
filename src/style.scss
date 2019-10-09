@@ -1,31 +1,38 @@
 @import url(https://fonts.googleapis.com/css?family=Orbitron);
 
-html {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
-}
+$light-brown: #87817A;
+$light-gray: #C2BDB7;
+$gray: #A49E98;
+$black: #2e2e2e;
+$green: #abbd8c;
+$dark-green: #97a67e;
+$red: #911616;
+
 body {
-  @extend html;
-  background: #87817A;
+  margin: 0;
+}
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $light-brown;
 }
 .calc {
-  background: #C2BDB7;
-  min-width: 350px;
-  min-height: 470px; 
+  background: $light-gray;
   width: 350px;
   height: 470px;
-  border-radius:20px;
-  border: 2px solid #A49E98;
+  border-radius: 20px;
+  border: 2px solid $gray;
   box-shadow: 10px 10px 25px,
               -3px -10px 15px grey inset;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   &__title {
   font: 18px Orbitron;
   text-align: center;
-  padding-top:10px;
+  padding-top: 10px;
   }
   &__buttons {
     display: grid;
@@ -37,6 +44,7 @@ body {
     margin: 20px 28px;
   }
   &__button {
+    margin: auto;
     display: flex;
     justify-content:center;
     align-items:center;
@@ -44,7 +52,7 @@ body {
     border-radius:7px;
     width: 55px;
     height: 45px;
-    background: #2e2e2e;
+    background: $black;
     color:white;
     cursor: pointer;
     user-select: none;
@@ -82,7 +90,7 @@ body {
       -ms-grid-column: 4;
     }
     &_red {
-      background: #911616;
+      background: $red;
     }
     &_right {
       height: 105px;
@@ -104,23 +112,19 @@ body {
 }
 
 .screen {
-  margin: auto;
   width: 300px;
-  height: 70px;
-  background: #abbd8c;
-  border-radius:10px;
-  border: 2px solid #97a67e;
+  background: $green;
+  border-radius: 10px;
+  border: 2px solid $dark-green;
   &__text {
-    text-align:right;
+    text-align: right;
     font-family: Orbitron;
     padding-right: 13px;
   }
   &__input-value {
-    margin-top: 5px;
     font-size: 35px;
   }
   &__expression {
-    margin-top: -38px;
-    color: #97a67e;
+    color: $dark-green;
   }
 }
