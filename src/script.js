@@ -3,10 +3,10 @@ import './style.scss';
 
 $(document).ready(function() {
   var result = 0;
-  $('.button').on('mousedown', function(){
+  $('.calc__button').on('mousedown', function(){
     const button = $(this).text();
-    const head = $('#main');
-    const str = $('#expression');
+    const head = $('.screen__input-value');
+    const str = $('.screen__expression');
     //проверяем, что нажатая копка с цифрой
     if (button.match(/[0-9]/)){
       //проверяем что в заголовке не 0 и в строке выражения, не математические знаки и это не законченное выражение

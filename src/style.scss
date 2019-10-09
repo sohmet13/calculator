@@ -12,7 +12,7 @@ body {
   @extend html;
   background: #87817A;
 }
-#container {
+.calc {
   background: #C2BDB7;
   min-width: 350px;
   min-height: 470px; 
@@ -22,33 +22,12 @@ body {
   border: 2px solid #A49E98;
   box-shadow: 10px 10px 25px,
               -3px -10px 15px grey inset;
-  h1 {
+  &__title {
   font: 18px Orbitron;
   text-align: center;
   padding-top:10px;
   }
-  #screen {
-    margin: auto;
-    width: 300px;
-    height: 70px;
-    background: #abbd8c;
-    border-radius:10px;
-    border: 2px solid #97a67e;
-    p {
-      text-align:right;
-      font-family: Orbitron;
-      padding-right: 13px;
-    }
-    #main {
-      margin-top: 5px;
-      font-size: 35px;
-    }
-    #expression {
-      margin-top: -38px;
-      color: #97a67e;
-    }
-  }
-  #buttons {
+  &__buttons {
     display: grid;
     display: -ms-grid;
     -ms-grid-columns: 80px 80px 80px 80px;
@@ -56,64 +35,64 @@ body {
     -ms-grid-rows: 60px 60px 60px 60px 60px;
     grid-auto-rows: 60px;
     margin: 20px 28px;
-    .button {
-      display: flex;
-      justify-content:center;
-      align-items:center;
-      font-family: Orbitron;
-      border-radius:7px;
-      width: 55px;
-      height: 45px;
-      background: #2e2e2e;
-      color:white;
-      cursor: pointer;
-      user-select: none;
-      box-shadow: 0px -16px 40px -20px grey inset,
-              0 4px black;
-      &:active {
-        margin-top:5px;
-        box-shadow: none;
-      }
+  }
+  &__button {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    font-family: Orbitron;
+    border-radius:7px;
+    width: 55px;
+    height: 45px;
+    background: #2e2e2e;
+    color:white;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 0px -16px 40px -20px grey inset,
+    0 4px black;
+    &:active {
+      margin-top:5px;
+      box-shadow: none;
     }
-    .FR {
+    &_FR {
       -ms-grid-row: 1;
     }
-    .SR {
+    &_SR {
       -ms-grid-row: 2;
     }
-    .TR {
+    &_TR {
       -ms-grid-row: 3;
     }
-    .FoR {
+    &_FoR {
       -ms-grid-row: 4;
     }
-    .FiR {
+    &_FiR {
       -ms-grid-row: 5;
     }
-    .FC {
+    &_FC {
       -ms-grid-column: 1;
     }
-    .SC {
+    &_SC {
       -ms-grid-column: 2;
     }
-    .TC {
+    &_TC {
       -ms-grid-column: 3;
     }
-    .FoC {
+    &_FoC {
       -ms-grid-column: 4;
     }
-    .red {
+    &_red {
       background: #911616;
     }
-    .right {
-     height: 105px;
-     -ms-grid-column: 4;
-     grid-column: 4;
-     -ms-grid-row: 4;
-     -ms-grid-row-span: 2;
-     grid-row: span 2;
+    &_right {
+      height: 105px;
+      -ms-grid-column: 4;
+      grid-column: 4;
+      -ms-grid-row: 4;
+      -ms-grid-row-span: 2;
+      grid-row: span 2;
     }
-    .bottom {
+    &_bottom {
       width: 135px;
       -ms-grid-column: 1;
       -ms-grid-column-span: 2;
@@ -121,5 +100,27 @@ body {
       -ms-grid-row: 5;
       grid-row: 5;
     }
+  }
+}
+
+.screen {
+  margin: auto;
+  width: 300px;
+  height: 70px;
+  background: #abbd8c;
+  border-radius:10px;
+  border: 2px solid #97a67e;
+  &__text {
+    text-align:right;
+    font-family: Orbitron;
+    padding-right: 13px;
+  }
+  &__input-value {
+    margin-top: 5px;
+    font-size: 35px;
+  }
+  &__expression {
+    margin-top: -38px;
+    color: #97a67e;
   }
 }
