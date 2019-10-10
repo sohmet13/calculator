@@ -1,38 +1,20 @@
-@import url(https://fonts.googleapis.com/css?family=Orbitron);
+@import "../styles/colors";
 
-$light-brown: #87817A;
-$light-gray: #C2BDB7;
-$gray: #A49E98;
-$black: #2e2e2e;
-$green: #abbd8c;
-$dark-green: #97a67e;
-$red: #911616;
-
-body {
-  margin: 0;
-}
-.container {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: $light-brown;
-}
-.calc {
+.Calc {
   background: $light-gray;
   width: 350px;
   height: 470px;
   border-radius: 20px;
   border: 2px solid $gray;
   box-shadow: 10px 10px 25px,
-              -3px -10px 15px grey inset;
+  -3px -10px 15px grey inset;
   display: flex;
   flex-direction: column;
   align-items: center;
   &__title {
-  font: 18px Orbitron;
-  text-align: center;
-  padding-top: 10px;
+    font: 18px Orbitron;
+    text-align: center;
+    padding-top: 10px;
   }
   &__buttons {
     display: grid;
@@ -41,14 +23,13 @@ body {
     grid-template-columns: repeat(4, 80px);
     -ms-grid-rows: 60px 60px 60px 60px 60px;
     grid-auto-rows: 60px;
-    margin: 20px 28px;
+    margin: auto;
   }
   &__button {
     margin: auto;
     display: flex;
     justify-content:center;
     align-items:center;
-    font-family: Orbitron;
     border-radius:7px;
     width: 55px;
     height: 45px;
@@ -111,7 +92,7 @@ body {
   }
 }
 
-.screen {
+.Screen {
   width: 300px;
   background: $green;
   border-radius: 10px;
