@@ -17,6 +17,25 @@
     text-align: center;
     padding-top: 10px;
   }
+
+  &__screen {
+    width: 300px;
+    background: $green;
+    border-radius: 10px;
+    border: 2px solid $dark-green;
+    &-text {
+      text-align: right;
+      padding-right: 13px;
+    }
+  }
+
+  &__input-value {
+    font-size: 35px;
+  }
+  &__expression {
+    color: $dark-green;
+  }
+
   &__buttons {
     display: grid;
     display: -ms-grid;
@@ -90,22 +109,5 @@
       -ms-grid-row: 5;
       grid-row: 5;
     }
-  }
-}
-
-.Screen {
-  width: 300px;
-  background: $green;
-  border-radius: 10px;
-  border: 2px solid $dark-green;
-  &__text {
-    text-align: right;
-    padding-right: 13px;
-  }
-  &__input-value {
-    font-size: 35px;
-  }
-  &__expression {
-    color: $dark-green;
   }
 }
