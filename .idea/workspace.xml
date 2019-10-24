@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82147362-15a9-420b-864c-7f7ed858188d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Calculator.test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Calculator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Calculator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Calculator.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Calculator.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="SCSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -79,8 +80,19 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="npm.build" />
+      <item itemvalue="npm.test" />
       <item itemvalue="npm.start" />
     </list>
   </component>
@@ -97,7 +109,8 @@
       <workItem from="1570547717172" duration="20923000" />
       <workItem from="1570706909649" duration="1393000" />
       <workItem from="1571039895440" duration="14001000" />
-      <workItem from="1571155271730" duration="16556000" />
+      <workItem from="1571155271730" duration="21445000" />
+      <workItem from="1571760422393" duration="15173000" />
     </task>
     <servers />
   </component>

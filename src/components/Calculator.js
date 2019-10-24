@@ -60,8 +60,8 @@ export class Calculator extends Component {
       case this.state.expression === this.state.limit:
         return `0${sign}`;
       case !!this.state.expression.match(this.state.equalSignMatcher):
-        return `${this.state.result}${sign}`;
-        // если последний знак вы строке равен какому-либо математическому знаку
+        return `${this.state.expression.substr(this.state.expression.indexOf('=') + 1)}${sign}`;
+        // если последний знак в строке равен какому-либо математическому знаку
       case !!this.state.expression[this.state.expression.length - 1].match(this.state.mathSignsMatcher):
         return `${this.state.expression.slice(0, -1)}${sign}`;
       default:
@@ -79,7 +79,7 @@ export class Calculator extends Component {
     // eslint-disable-next-line no-eval
     let result = eval(this.state.expression);
     if (!Number.isInteger(result)) {
-      result = result.toString() === result.toFixed(1) ? result.toFixed(1) : result.toFixed(2);
+      result = result.toFixed(result.toString() === result.toFixed(1) ? 1 : 2);
     }
     this.setState({
       expression: `${this.state.expression}=${result}`,
