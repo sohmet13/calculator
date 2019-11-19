@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="82147362-15a9-420b-864c-7f7ed858188d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Calculator.test.js" afterDir="false" />
+    <list default="true" id="082ebff7-62a8-4d8b-938a-234f9ec9b6de" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Calculator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Calculator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Calculator.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Calculator.test.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,38 +15,25 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="SCSS File" />
-        <option value="JavaScript File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1RvVmdSdv184hPZnGTkczC1NNhF" />
-  <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="list.type.of.created.stylesheet" value="SCSS" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.standard" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.standard" value="project" />
-    <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/node_modules/eslint" />
-    <property name="node.js.selected.package.standard" value="" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\GitHub\JS-Calculator\.idea" />
+      </set>
+    </option>
   </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\17537870\Проекты\Проекты\calculator" />
-      <recent name="C:\Users\17537870\Проекты\Проекты\calculator\src" />
-    </key>
+  <component name="ProjectId" id="1TqbxPFoXJfYQFjS1ulntnMZxE6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -91,9 +79,9 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="npm.start" />
       <item itemvalue="npm.build" />
       <item itemvalue="npm.test" />
-      <item itemvalue="npm.start" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -101,16 +89,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="82147362-15a9-420b-864c-7f7ed858188d" name="Default Changelist" comment="" />
-      <created>1570547716042</created>
+      <changelist id="082ebff7-62a8-4d8b-938a-234f9ec9b6de" name="Default Changelist" comment="" />
+      <created>1574190818140</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1570547716042</updated>
-      <workItem from="1570547717172" duration="20923000" />
-      <workItem from="1570706909649" duration="1393000" />
-      <workItem from="1571039895440" duration="14001000" />
-      <workItem from="1571155271730" duration="21445000" />
-      <workItem from="1571760422393" duration="15173000" />
+      <updated>1574190818140</updated>
+      <workItem from="1574190820596" duration="2576000" />
     </task>
     <servers />
   </component>
@@ -122,9 +106,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>

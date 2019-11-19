@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import './Calculator.scss';
 
 export class Calculator extends Component {
+  limit = 'Digit Limit Met';
+  equalSignMatcher = /[=]/;
+  mathSignsMatcher = /[/*+]|-/;
+
   constructor(props) {
     super(props);
     this.state = {
-      limit: 'Digit Limit Met',
-      equalSignMatcher: /[=]/,
-      mathSignsMatcher: /[/*+]|-/,
       inputValue: '0',
       expression: '0',
     }
@@ -16,7 +17,7 @@ export class Calculator extends Component {
   pressNumbers = (num) => {
     // мы не удаляем предыдущее выражение, если оно не 0, не текст о превышении лимита, и и не оконченное выражение (т.е. с равно)
     const saveExpression =
-            !['0', this.state.limit].includes(this.state.expression) && !this.state.expression.match(this.state.equalSignMatcher);
+            !['0', this.limit].includes(this.state.expression) && !this.state.expression.match(this.equalSignMatcher);
     // мы не удаляем предыдущее введенное значение, если там цифра или если там "0."
     const saveInputValue = Number.parseFloat(this.state.inputValue) || this.state.inputValue === '0.';
 
@@ -29,12 +30,12 @@ export class Calculator extends Component {
   pressPoint = () => {
     const getValues = () => {
       switch (true) {
-      case !!this.state.inputValue.match(this.state.mathSignsMatcher):
+      case !!this.state.inputValue.match(this.mathSignsMatcher):
         return {
           expression: `${this.state.expression}0.`,
           inputValue: '0.'
         };
-      case !!this.state.expression.match(this.state.equalSignMatcher):
+      case !!this.state.expression.match(this.equalSignMatcher):
         return {
           expression: '0.',
           inputValue: '0.'
@@ -57,12 +58,12 @@ export class Calculator extends Component {
   pressMathSigns = (sign) => {
     const getExpression = () => {
       switch (true) {
-      case this.state.expression === this.state.limit:
+      case this.state.expression === this.limit:
         return `0${sign}`;
-      case !!this.state.expression.match(this.state.equalSignMatcher):
+      case !!this.state.expression.match(this.equalSignMatcher):
         return `${this.state.expression.substr(this.state.expression.indexOf('=') + 1)}${sign}`;
         // если последний знак в строке равен какому-либо математическому знаку
-      case !!this.state.expression[this.state.expression.length - 1].match(this.state.mathSignsMatcher):
+      case !!this.state.expression[this.state.expression.length - 1].match(this.mathSignsMatcher):
         return `${this.state.expression.slice(0, -1)}${sign}`;
       default:
         return `${this.state.expression}${sign}`
@@ -72,7 +73,7 @@ export class Calculator extends Component {
   };
 
   pressEqualSign = () => {
-    if (this.state.expression[this.state.expression.length - 1].match(this.state.mathSignsMatcher)) {
+    if (this.state.expression[this.state.expression.length - 1].match(this.mathSignsMatcher)) {
       return;
     }
     // eval - это, конечно, зло, но он именно для таких выражений он и создавался и здесь он безопасен
@@ -83,7 +84,7 @@ export class Calculator extends Component {
     }
     this.setState({
       expression: `${this.state.expression}=${result}`,
-      inputValue: result
+      inputValue: `${result}`
     }, this.checkLimit)
   };
 
@@ -96,7 +97,7 @@ export class Calculator extends Component {
 
   // удаляет последнее имеющее смысл выражение в строке (т.е. либо набор чисел с точкой до мат.знака, либо сам мат.знак)
   deleteLast = () => {
-    if (this.state.expression.match(this.state.equalSignMatcher)) {
+    if (this.state.expression.match(this.equalSignMatcher)) {
       this.reset();
       return;
     }
@@ -107,7 +108,7 @@ export class Calculator extends Component {
     this.setState({
       // если выражение оканчивается на число или точку, то надо обрезать до математического знака, и наоборот
       inputValue: getInputValue(newExpression[newExpression.length - 1]
-        .match(this.state.mathSignsMatcher) ? /[0-9.]/ : this.state.mathSignsMatcher),
+        .match(this.mathSignsMatcher) ? /[0-9.]/ : this.mathSignsMatcher),
       expression: newExpression
     }, this.checkLimit);
   };
@@ -115,7 +116,7 @@ export class Calculator extends Component {
   checkLimit = () => {
     if (this.state.inputValue.length > 9 || this.state.expression.length > 25) {
       this.setState({
-        expression: this.state.limit,
+        expression: this.limit,
         inputValue: '0'
       });
     }

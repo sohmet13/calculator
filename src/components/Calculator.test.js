@@ -94,6 +94,7 @@ describe('method pressNumbers', () => {
 
 describe('method pressPoint', () => {
   const pointClass = '.Calc__button.Calc__button_TC.Calc__button_FiR';
+  const equalSignClass = '.Calc__button.Calc__button_right';
   it('renders 0. at inputValue and expression+0. at expression if mathSigns at inputValue', () => {
     const calculator = shallow(<Calculator />);
     calculator.setState({
@@ -145,6 +146,22 @@ describe('method pressPoint', () => {
     expect(calculator.find(inputValueClass).text()).toBe('0');
     expect(calculator.find(expressionClass).text()).toBe('0');
 
+    calculator.find(pointClass).simulate('click');
+
+    expect(calculator.find(inputValueClass).text()).toBe('0.');
+    expect(calculator.find(expressionClass).text()).toBe('0.');
+  });
+
+  it('renders 0. at inputValue and expression after two presses', () => {
+    const calculator = shallow(<Calculator />);
+    calculator.setState({
+      inputValue: '6',
+      expression: '5+6'
+    });
+    expect(calculator.find(inputValueClass).text()).toBe('6');
+    expect(calculator.find(expressionClass).text()).toBe('5+6');
+
+    calculator.find(equalSignClass).simulate('click');
     calculator.find(pointClass).simulate('click');
 
     expect(calculator.find(inputValueClass).text()).toBe('0.');
