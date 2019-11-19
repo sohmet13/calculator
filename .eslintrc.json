@@ -1,0 +1,29 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "amd": true,
+    "node": true
+  },
+  "extends": ["eslint:recommended", "react-app"],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-multi-spaces": "error",
+    "space-unary-ops": [
+      2, {
+        "words": true,
+        "nonwords": false
+      }],
+    "indent": ["error", 2],
+    "spaced-comment": "error",
+    "no-trailing-spaces": "error",
+    "max-len": ["error", { "code": 140 }]
+  }
+}

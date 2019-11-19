@@ -1,0 +1,113 @@
+@import "../styles/colors";
+
+.Calc {
+  background: $light-gray;
+  width: 350px;
+  height: 470px;
+  border-radius: 20px;
+  border: 2px solid $gray;
+  box-shadow: 10px 10px 25px,
+  -3px -10px 15px grey inset;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__title {
+    font-size: 18px;
+    font-weight: normal;
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  &__screen {
+    width: 300px;
+    background: $green;
+    border-radius: 10px;
+    border: 2px solid $dark-green;
+    &-text {
+      text-align: right;
+      padding-right: 13px;
+    }
+  }
+
+  &__input-value {
+    font-size: 35px;
+  }
+  &__expression {
+    color: $dark-green;
+  }
+
+  &__buttons {
+    display: grid;
+    display: -ms-grid;
+    -ms-grid-columns: 80px 80px 80px 80px;
+    grid-template-columns: repeat(4, 80px);
+    -ms-grid-rows: 60px 60px 60px 60px 60px;
+    grid-auto-rows: 60px;
+    margin: auto;
+  }
+  &__button {
+    margin: auto;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:7px;
+    width: 55px;
+    height: 45px;
+    background: $black;
+    color:white;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 0px -16px 40px -20px grey inset,
+    0 4px black;
+    &:active {
+      margin-top:5px;
+      box-shadow: none;
+    }
+    &_FR {
+      -ms-grid-row: 1;
+    }
+    &_SR {
+      -ms-grid-row: 2;
+    }
+    &_TR {
+      -ms-grid-row: 3;
+    }
+    &_FoR {
+      -ms-grid-row: 4;
+    }
+    &_FiR {
+      -ms-grid-row: 5;
+    }
+    &_FC {
+      -ms-grid-column: 1;
+    }
+    &_SC {
+      -ms-grid-column: 2;
+    }
+    &_TC {
+      -ms-grid-column: 3;
+    }
+    &_FoC {
+      -ms-grid-column: 4;
+    }
+    &_red {
+      background: $red;
+    }
+    &_right {
+      height: 105px;
+      -ms-grid-column: 4;
+      grid-column: 4;
+      -ms-grid-row: 4;
+      -ms-grid-row-span: 2;
+      grid-row: span 2;
+    }
+    &_bottom {
+      width: 135px;
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 2;
+      grid-column: span 2;
+      -ms-grid-row: 5;
+      grid-row: 5;
+    }
+  }
+}
