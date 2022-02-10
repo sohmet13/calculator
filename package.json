@@ -27,7 +27,7 @@
   "devDependencies": {
     "enzyme-adapter-react-16": "^1.15.1",
     "eslint": "^6.5.1",
-    "node-sass": "^4.12.0"
+    "node-sass": "^7.0.0"
   },
   "browserslist": {
     "production": [
